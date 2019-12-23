@@ -1,0 +1,8 @@
+{
+  "name": "gatsby-pdf-generator",
+  "version": "1.0.0",
+  "description": "Gatsby plugin to generate PDFs of any pages you like",
+  "main": "index.js",
+  "author": "Liam Kennedy <liam@lkenn.xyz>",
+  "license": "MIT"
+}
