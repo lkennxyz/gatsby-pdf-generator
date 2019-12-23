@@ -19,11 +19,15 @@ exports.onCreatePage = ({ page, actions }, { paths }) => {
 exports.onPostBuild = async (options, { paths, css }) => {
   console.log('\nPost Build - generating pdfs\n');
   for (let i = 0; i < paths.length; i++) {
-    await printPDF(paths[i], css, i);
+    await printPDF({
+      pageName: paths[i],
+      css, 
+      i
+    });
   }
 };
 
-async function printPDF(pageName,  i) {
+async function printPDF({pageName, css, i}) {
   const app = express();
   app.use(express.static('public'));
   app.listen(process.env.PORT || (4040 + i));
